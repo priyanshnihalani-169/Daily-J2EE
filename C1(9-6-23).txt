@@ -1,0 +1,30 @@
+set linesize 120
+set pagesize 20
+select * from emp;
+
+ select * from emp where empno = &no;
+Enter value for no: 7369
+  1: select * from emp where empno = &no
+  1: select * from emp where empno = 7369
+
+ed ty2;
+declare
+	no number;
+	nm emp.ename%TYPE;
+	ejob emp.job%TYPE;
+begin
+	no :=&no;
+	pro2(no,nm,ejob);
+	dbms_output.put_line('Name :'||nm);
+	dbms_output.put_line('Job:'||ejob);
+end;
+
+@ ty2;
+
+ed pro2;
+create or replace procedure pro2(no in number,nm in varchar2
+	select ename,job into nm,ejob from emp where empno = no;
+
+
+ set serveroutput on
+ /

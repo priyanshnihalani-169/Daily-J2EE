@@ -1,0 +1,15 @@
+Multiple java compiler
+1 Command Prompt
+javac *.java
+
+rmic TotalImpl
+
+rmiregistry
+
+2 Command Prompt
+
+java TotalServer
+
+3 Command Prompt
+
+java TotalClient

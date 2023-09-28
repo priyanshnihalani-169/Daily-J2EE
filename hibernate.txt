@@ -1,0 +1,61 @@
+goto src -> main - >java Right Click and create new Class File Name 
+Student
+
+package com.ty.FirstHibernate;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class student{
+	@Id
+	private int id;
+	private String nm;
+	private String city;
+	
+	//From Source Menu Create Constructor from student class	
+	public student(){
+		super();
+		this.id = id;
+		this.nm = nm;
+		this.city = city;
+	}
+	public int getId(){
+		return id;
+	}
+
+	public void set{
+	}
+
+
+-----------------------------------------------------------------------------------------------------------------------
+package com.ty.FirstHibernate;
+import org
+
+
+public  class App
+{
+	System.out.println("Hello World");
+	//start from here
+	Configuration cfg = new Configuration();
+	cfg.configure("hibernate.cfg.xml");
+	SessionFactory factory = cfg.buildSessionFactory();
+
+	Student s1 = new Student();
+	s1.setID(1)
+	s1.setNm("Aaaa");
+	s1.setCity("Junagadh");
+	System.out.println(s1);
+
+	Session session = factory.openSession();
+	Transaction t1 = session.beginTransaction();
+	session.save(s1);
+	t1.commit();
+	session.close();
+	System.out.println(factory);
+	System.out.println(factory.isClosed());
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------------
+
+

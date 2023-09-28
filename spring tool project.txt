@@ -1,0 +1,37 @@
+1 Download Ecelips
+2 Goto Help Menu select ecelips Market place search spring tool 4 and install
+3 file  -> new -> Project -> spring starter project
+4 Project name = demo1
+5 type = mavan
+6 package = jar file
+7 java version = 8
+8 language = java
+
+9 next add -> JDBC API and MYSQL DRIVER  next next
+10 finish
+-------------------------------------------------------------------
+src/main/resourece --->  application property file
+
+spring.datasource.url = jdbc:mysql://localhost:3306/bca
+spring.datasource.username = uday
+spring.datasource.password = shah
+
+---------------------------------------------------------------------
+11 goto src/main/java ---> demoapplication.java file
+
+public class DemoApplication implements CommanadLineRunner{
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+
+	public static void main(String[] args){
+	@Override
+	public void run(String ... args) throws Exception{
+		String sql = "insert into stud(snm,scity,scno) values (?,?,?)";
+		int result = jdbcTemplate.update(sql,"Uday","Jungadh","1234567890");
+		if(result > 0) {
+			System.out.println("Record Inserted.....");
+		else {
+			System.out.println("Record Not Inserted.....");
+		}
+	}
+}
